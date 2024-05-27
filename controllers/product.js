@@ -18,7 +18,7 @@ getProduct = async (req, res) => {
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
-        res.status(200).json(product);
+        res.status(200).json({product: 'Product found'});
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -40,7 +40,7 @@ createProduct = async (req, res) => {
     });
     try {
         const newProduct = await product.save();
-        res.status(201).json(newProduct);
+        res.status(201).json({newProduct: 'Product created successfully'});
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -64,7 +64,7 @@ updateProduct = async (req, res) => {
         product.id = id || product.id;
         product.available = available || product.available;
         const updatedProduct = await product.save();
-        res.status(200).json(updatedProduct);
+        res.status(200).json({updatedProduct: 'Product updated successfully'});
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -77,7 +77,7 @@ deleteProduct = async (req, res) => {
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
-        res.status(200).json({ message: 'Product deleted' });
+        res.status(200).json({ message: 'Product deleted successfully' });
     } catch (error) {
         res.status(400).json({ message: error.message });
     }

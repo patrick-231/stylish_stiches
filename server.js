@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 4000;
 app.get('/', (req, res) => {
     res.send('Hello from Stylish Stiches Backend')
 });
-
+// routes
 app.use("/user", user)
 app.use("/products", product)
 
