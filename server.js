@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const colors = require('colors');
 require('dotenv').config();
 const connectDB = require('./dbinit');
+const user = require('./routes/user')
+const product = require('./routes/product')
+
 
 const app = express();
 
@@ -18,6 +20,9 @@ app.get('/', (req, res) => {
     res.send('Hello from Stylish Stiches Backend')
 });
 
+app.use("/user", user)
+app.use("/products", product)
+
 app.listen(PORT, () =>{
     console.log(`listening on http://localhost:${PORT}`.cyan)
-})
+});
