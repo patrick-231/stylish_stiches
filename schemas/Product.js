@@ -5,10 +5,6 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    new_price: {
-        type: Number,
-        required: true,
-    },
     old_price: {
         type: Number,
         required: true,
@@ -21,18 +17,13 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    /* image: {
-        type: String,
-        required: true,
-    }, */
-    color: {
+    image: {
         type: String,
         required: true,
     },
-    id: {
-        type: Number,
+    color: {
+        type: String,
         required: true,
-        unique: true,
     },
     available: {
         type: Boolean,

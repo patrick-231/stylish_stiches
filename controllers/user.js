@@ -25,10 +25,10 @@ const loginUser = async (req, res) => {
 
 //signup user
 const signupUser = async (req, res) =>{
-    const { email, password } = req.body;
+    const {name, email, password } = req.body;
     
     try {
-        const user = await User.signup(email, password);
+        const user = await User.signup(name, email, password);
 
         const token = createToken(user._id, user.email);
 

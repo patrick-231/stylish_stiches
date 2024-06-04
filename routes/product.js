@@ -11,18 +11,18 @@ const {
 const app = express.Router();
 
 // Get all products
-app.get('/products', getAllProducts);
+app.get('/allproducts', getAllProducts);
 
 // Get a single product
-app.get('/products/:id', getProduct);
+app.get('/:id', getProduct);
 
 // Create a new product
-app.post('/products', createProduct);
+app.post('/allproducts', createProduct);
 
 // Update a product
-app.put('/products/:id', updateProduct);
+app.put('/:id', updateProduct);
 
 // Delete a product
-app.delete('/products/:id', deleteProduct);
+app.delete('/:id', deleteProduct);
 
 module.exports = app;
